@@ -2,7 +2,6 @@
 
 depths = File.readlines('input.txt').map(&:to_i)
 
-previous_depth = nil
 increasing_count = 0
 starting_index = 0
 
