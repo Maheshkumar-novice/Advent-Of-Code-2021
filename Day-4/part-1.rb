@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'pry'
 # Bingo game
 # 5 x 5 matrix
 # Row Column match
@@ -35,19 +34,10 @@ def get_bingo_matrices_from_input_file(input)
   bingo_matrices
 end
 
-input = File.read('input.txt').split("\n\n")
-numbers_array = get_number_array_from_input_file(input)
-bingo_matrices = get_bingo_matrices_from_input_file(input)
-#pp numbers_array
-#pp bingo_matrices
-
 def eliminate_number_from_bingo_matrix(number, bingo_matrix)
   bingo_matrix.each do |row|
     row.map! { |value| value == number ? '' : value }
   end
-end
-
-def row_bingo?
 end
 
 def row_bingo?(bingo_matrix)
@@ -71,6 +61,10 @@ def bingo?(bingo_matrix)
   
   false
 end
+
+input = File.read('input.txt').split("\n\n")
+numbers_array = get_number_array_from_input_file(input)
+bingo_matrices = get_bingo_matrices_from_input_file(input)
 
 numbers_array.each do |number|
   bingo_matrices.each do |bingo_matrix|
